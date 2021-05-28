@@ -7,18 +7,16 @@ import java.io.IOException;
 
 @WebServlet(name = "GuessServlet", urlPatterns = "/guess")
 public class GuessServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String numberGuess = request.getParameter("numberGuess");
-        if (request.getMethod().equalsIgnoreCase("POST")){
-
-            if(!numberGuess.equals("1") && !numberGuess.equals("2") && !numberGuess.equals("3")){
-                response.sendRedirect("/guess.jsp");
-            }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//        String numberGuess = request.getParameter("numberGuess");
+        if(!request.getParameter("numberGuess").equals("1") && !request.getParameter("numberGuess").equals("2") && !request.getParameter("numberGuess").equals("3")){
+            response.sendRedirect("/incorrect");
+//            response.sendRedirect("/guess");
         } else {
-            response.sendRedirect("/correct.jsp");
+            response.sendRedirect("/correct");
         }
-        request.setAttribute("numberGuess", numberGuess);
-//        request.getRequestDispatcher("/correct.jsp").forward(request, response);
     }
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        request.getRequestDispatcher("/guess.jsp").forward(request, response);
+    }
 }
