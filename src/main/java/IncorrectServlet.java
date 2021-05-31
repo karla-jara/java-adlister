@@ -8,6 +8,8 @@ import java.io.IOException;
 @WebServlet(name = "IncorrectServlet", urlPatterns = "/incorrect")
 public class IncorrectServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("/incorrect.jsp").forward(request, response);
+        String lose = " unfortunately, lost :(";
+        request.setAttribute("outcome", lose);
+        request.getRequestDispatcher("/outcome.jsp").forward(request, response);
     }
 }

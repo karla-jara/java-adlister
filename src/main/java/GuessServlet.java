@@ -8,13 +8,22 @@ import java.io.IOException;
 @WebServlet(name = "GuessServlet", urlPatterns = "/guess")
 public class GuessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-//        String numberGuess = request.getParameter("numberGuess");
-        if(!request.getParameter("numberGuess").equals("1") && !request.getParameter("numberGuess").equals("2") && !request.getParameter("numberGuess").equals("3")){
-            response.sendRedirect("/incorrect");
-//            response.sendRedirect("/guess");
-        } else {
+        int randomNumber = (int)(Math.random()*3+1);
+        String numberGuess = request.getParameter("numberGuess");
+        System.out.println(randomNumber);
+
+        if(Integer.parseInt(numberGuess) == randomNumber){
+            String win = " are a Winner!";
+            request.setAttribute("outcome", win);
             response.sendRedirect("/correct");
         }
+        else if(Integer.parseInt(numberGuess) != randomNumber && Integer.parseInt(numberGuess) >=1 && Integer.parseInt(numberGuess) <=3) {
+            response.sendRedirect("/incorrect");
+        }
+        else {
+            response.sendRedirect("/guess");
+        }
+
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         request.getRequestDispatcher("/guess.jsp").forward(request, response);

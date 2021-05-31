@@ -1,16 +1,18 @@
+<%--@elvariable id="outcome" type="CorrectServlet"--%>
+<%--@elvariable id="outcome" type="IncorrectServlet"--%>
 <%--
   Created by IntelliJ IDEA.
   User: karlajara
   Date: 5/28/21
-  Time: 12:01 PM
+  Time: 12:00 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Incorrect</title>
+    <title>The Outcome</title>
 </head>
 <body>
-    <h1 style="align-content: center; color: red">You Lose!</h1>
+    <h1 style="text-align: center" >You${outcome}</h1>
 </body>
 </html>
