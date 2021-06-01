@@ -11,9 +11,9 @@
     <title>Guess</title>
 </head>
 <body>
-<h1>The Guessing Game</h1>
+<h1 style="text-align: center; margin: 90px">The Guessing Game</h1>
 <form action="/guess" method="POST">
-    <div class="form-group">
+    <div class="form-group" style="text-align: center; margin: 9px">
         <label for="numberGuess">Please guess a number from 1 to 3:</label>
         <input id="numberGuess" name="numberGuess" class="form-control" type="text">
     </div>

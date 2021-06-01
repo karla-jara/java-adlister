@@ -10,7 +10,7 @@ public class GuessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int randomNumber = (int)(Math.random()*3+1);
         String numberGuess = request.getParameter("numberGuess");
-        System.out.println(randomNumber);
+        System.out.println(numberGuess);
 
         if(Integer.parseInt(numberGuess) == randomNumber){
             String win = " are a Winner!";
@@ -23,8 +23,8 @@ public class GuessServlet extends HttpServlet {
         else {
             response.sendRedirect("/guess");
         }
-
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         request.getRequestDispatcher("/guess.jsp").forward(request, response);
     }
