@@ -13,6 +13,6 @@
     <title>The Outcome</title>
 </head>
 <body>
-    <h1 c >You${outcome}</h1>
+    <h1>You${outcome}</h1>
 </body>
 </html>

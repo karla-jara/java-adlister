@@ -12,4 +12,5 @@ public class IncorrectServlet extends HttpServlet {
         request.setAttribute("outcome", lose);
         request.getRequestDispatcher("/outcome.jsp").forward(request, response);
     }
+
 }

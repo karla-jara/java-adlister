@@ -5,20 +5,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String crust = request.getParameter("crust");
-        String sauce = request.getParameter("sauce");
-        String size = request.getParameter("size");
-        String [] toppings = request.getParameterValues("toppings");
-        String [] address = request.getParameterValues("address");
-//        request.setAttribute("crust", crust);
-//        System.out.println(crust);
-
+        request.getParameter("crust");
+        request.getParameter("sauce");
+        request.getParameter("size");
+        request.getParameterValues("toppings");
+        request.getParameterValues("address");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
