@@ -11,13 +11,14 @@ import java.util.List;
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 public class PizzaOrderServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getParameter("crust");
-        request.getParameter("sauce");
-        request.getParameter("size");
-        request.getParameterValues("toppings");
-        List<String> list = Collections.singletonList("toppings");
-        request.getParameterValues("address");
-        List<String> location = Collections.singletonList("address");
+        String crust = request.getParameter("crust");
+        String sauce = request.getParameter("sauce");
+        String size = request.getParameter("size");
+        String [] toppings = request.getParameterValues("toppings");
+        String [] address = request.getParameterValues("address");
+//        request.setAttribute("crust", crust);
+//        System.out.println(crust);
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -25,9 +26,7 @@ public class PizzaOrderServlet extends HttpServlet{
         String sauce = request.getParameter("sauce");
         String size = request.getParameter("size");
         String [] toppings = request.getParameterValues("toppings");
-//        List<String> list = Collections.singletonList("toppings");
         String [] address = request.getParameterValues("address");
-//        List<String> location = Collections.singletonList("address");
         System.out.println(crust);
         System.out.println(sauce);
         System.out.println(size);
