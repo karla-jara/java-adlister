@@ -10,8 +10,6 @@ public class GuessServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int randomNumber = (int)(Math.random()*3+1);
         String numberGuess = request.getParameter("numberGuess");
-        System.out.println(numberGuess);
-
         if(Integer.parseInt(numberGuess) == randomNumber){
             String win = " are a Winner!";
             request.setAttribute("outcome", win);
