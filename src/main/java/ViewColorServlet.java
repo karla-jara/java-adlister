@@ -8,7 +8,7 @@ import java.io.IOException;
 @WebServlet(name = "ViewColorServlet", urlPatterns = "/view-color")
 public class ViewColorServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-        String color = request.getQueryString();
+//        String color = request.getQueryString();
         request.setAttribute("color", request.getQueryString());
         request.getRequestDispatcher("/view-color.jsp").forward(request, response);
     }

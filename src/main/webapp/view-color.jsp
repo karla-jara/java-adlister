@@ -13,7 +13,7 @@
     <title>View Color</title>
 </head>
 <body style="background-color: <%= request.getParameter("color") %>">
-<h1 style="margin: auto"><%= request.getQueryString() %> sure is beautiful!</h1>
+<h1 style="margin: auto"><%= request.getParameter("color") %> sure is beautiful!</h1>
 
 </body>
 </html>
