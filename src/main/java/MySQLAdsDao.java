@@ -27,10 +27,22 @@ public class MySQLAdsDao implements Ads{
                    config.getUsername(),
                    config.getPassword()
            );
-       } catch (SQLException throwables) {
-           throwables.printStackTrace();
+       } catch (SQLException e) {
+           e.printStackTrace();
        }
-
-
    }
+//
+//    public MySQLAdsDao() {
+//        Config config = new Config();
+//        try {
+//            DriverManager.registerDriver(new Driver());
+//            Connection connection = DriverManager.getConnection(
+//                    config.getUrl(),
+//                    config.getUsername(),
+//                    config.getPassword()
+//            );
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
